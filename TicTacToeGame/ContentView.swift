@@ -55,7 +55,7 @@ struct ContentView: View {
                     }
                     
                     // Show result only if the game has started
-                    if winner != nil || boardJoined().contains("") == false {
+                    if winner != nil || !board.flatMap({ $0 }).contains("") {
                         Text(winner != nil ? "\(winner!) wins!" : "It's a draw!")
                             .font(.title)
                             .foregroundColor(.white)
